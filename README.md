@@ -24,9 +24,7 @@ Site of recipes where users will be able to browse recipes by categories, create
   * Install dependenses ()
 * **Install Database**
   * Download Database from [link](https://www.google.com)
-  * Install with parametrs 
-    ⋅⋅⋅ - Name
-    ⋅⋅⋅ - Port
+  * Install with parametrs (Name, Port)
 ## Run the Project
 1. Bunch Database server (port)
 2. Build and run .NET Core "dotnet run" 
