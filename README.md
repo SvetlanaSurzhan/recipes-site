@@ -40,26 +40,26 @@ Site of recipes where users will be able to browse recipes by categories, create
 
 ## Milestone List
 #### Week 1
-  * Create README file
-  * Create a simple Mockup via [draw.io](https://www.draw.io)
-  * Install everything for Project
+  - [x] Create README file
+  - [x] Create a simple Mockup via [draw.io](https://www.draw.io)
+  - [ ] Install everything for Project
 #### Week 2  
-  * Create base project
-    * API
-    * Client side
-    * Database
-  * Create Entity Models and tables. Create Mapping.
+  - [ ] Create base project
+    - [ ] API
+    - [ ] Client side
+    - [ ] Database
+  - [ ] Create Entity Models and tables. Create Mapping.
 #### Week 3
-  * Get API endpoints (get all, by Id)
-  * Create endpoints
+  - [ ] Get API endpoints (get all, by Id)
+  - [ ] Create endpoints
 #### Week 4 - 7
-  * Update endpoint
-  * Delete endpoint
-  * Create application shell (header, footer, background)
-  * Create React recipe component
-  * Create React new recipe/update recipe pages (with components)
-  * Integrate Client side with ARI
-  * UAT (user accepted testing)
+  - [ ] Update endpoint
+  - [ ] Delete endpoint
+  - [ ] Create application shell (header, footer, background)
+  - [ ] Create React recipe component
+  - [ ] Create React new recipe/update recipe pages (with components)
+  - [ ] Integrate Client side with ARI
+  - [ ] UAT (user accepted testing)
   
   
 
