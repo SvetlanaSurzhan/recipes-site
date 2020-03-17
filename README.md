@@ -23,9 +23,9 @@ Site of recipes where users will be able to browse recipes by categories, create
   * install node packedges `npm install`
 * **Insyall API (.NET Core)**
   * Install ASP.NET Core 3.1
-  * Install dependences ()
+  * Install dependences
 * **Install Database**
-  * Download Database from [link](https://www.google.com)
+  * Download Database from [mysql](https://dev.mysql.com/doc/mysql-osx-excerpt/5.7/en/osx-installation-pkg.html)
   * Install with parametrs (Name, Port)
   
 ## Run the Project
@@ -42,7 +42,7 @@ Site of recipes where users will be able to browse recipes by categories, create
 #### Week 1
   - [x] Create README file
   - [x] Create a simple Mockup via [draw.io](https://www.draw.io)
-  - [ ] Install everything for Project
+  - [x] Install everything for Project
 #### Week 2  
   - [ ] Create base project
     - [ ] API
