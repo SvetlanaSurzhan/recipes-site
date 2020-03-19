@@ -44,10 +44,10 @@ Site of recipes where users will be able to browse recipes by categories, create
   - [x] Create a simple Mockup via [draw.io](https://www.draw.io)
   - [x] Install everything for Project
 #### Week 2  
-  - [ ] Create base project
-    - [ ] API
-    - [ ] Client side
-    - [ ] Database
+  - [x] Create base project
+    - [x] API
+    - [x] Client side
+    - [x] Database
   - [ ] Create Entity Models and tables. Create Mapping.
 #### Week 3
   - [ ] Get API endpoints (get all, by Id)
