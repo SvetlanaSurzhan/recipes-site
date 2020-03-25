@@ -48,7 +48,7 @@ Site of recipes where users will be able to browse recipes by categories, create
     - [x] API
     - [x] Client side
     - [x] Database
-  - [ ] Create Entity Models and tables. Create Mapping.
+  - [x] Create Entity Models and tables. Create Mapping.
 #### Week 3
   - [ ] Get API endpoints (get all, by Id)
   - [ ] Create endpoints
