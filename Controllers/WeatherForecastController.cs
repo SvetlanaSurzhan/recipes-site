@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace recipe_web_application.Controllers
+namespace RecipeWebApplication.Controllers
 {
     [ApiController]
     [Route("[controller]")]
