@@ -2,10 +2,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace RecipeWebApplication.DTO
 {
-    public class Ingridient
+    public class Type
     {
-        public int IngridientId { get; set; }
+        public int TypeId { get; set; }
         public string Name { get; set; }
-        public datetime Time { get; set; }
     }
 }

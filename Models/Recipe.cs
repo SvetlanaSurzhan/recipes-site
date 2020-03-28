@@ -8,7 +8,6 @@ namespace RecipeWebApplication.DTO
         public string Name { get; set; }
         public string Picture { get; set; }
         public string Discription { get; set; }
-        public Type Type { get; set; }
-        public IEnumerable<Ingridient> Ingridients { get; set; }
+        public int TypeId { get; set; }
     }
 }
