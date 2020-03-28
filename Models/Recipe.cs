@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace RecipeWebApplication.DTO
+namespace RecipeWebApplication.Models
 {
     public class Recipe
     {
