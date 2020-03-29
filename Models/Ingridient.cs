@@ -8,6 +8,6 @@ namespace RecipeWebApplication.Models
         public string Name { get; set; }
         public bool Quantity { get; set; }
         public string Units { get; set; }
-        public int RecipeId { get; set }
+        public int RecipeId { get; set; }
     }
 }
