@@ -1,4 +1,3 @@
-using Microsoft.EntityFrameworkCore;
 
 namespace RecipeWebApplication.EntityDatabase.Models
 {
