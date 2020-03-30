@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace RecipeWebApplication.Models
+namespace RecipeWebApplication.EntityDatabase.Models
 {
     public class Ingridient
     {
