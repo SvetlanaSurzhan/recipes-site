@@ -23,7 +23,7 @@ namespace RecipeWebApplication.Repositories
 
         public List<Recipe> GetAll()
         {
-            // Gets and prints all recipe in database
+            // Gets all recipes from database
             using (var context = new RecipeContext())
             {
                 var recipes = context.Recipes
