@@ -8,9 +8,8 @@ namespace RecipeWebApplication.EntityDatabase.Models
         public string Name { get; set; }
         public string Picture { get; set; }
         public string Description { get; set; }
-        public int TypeId { get; set; }
-        public ICollection<Ingredient> Ingredients { get; set; }
-        public Type Type { get; set; }
+        public virtual ICollection<Ingredient> Ingredients { get; set; }
+        public virtual Type Type { get; set; }
 
         // static void Test() 
         // {
