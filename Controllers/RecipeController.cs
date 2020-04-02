@@ -13,11 +13,6 @@ namespace RecipeWebApplication.Controllers
     [Route("[controller]")]
     public class RecipeController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<RecipeController> _logger;
 
         public RecipeController(ILogger<RecipeController> logger)
@@ -25,22 +20,21 @@ namespace RecipeWebApplication.Controllers
             _logger = logger;
         }
 
+        [HttpPost]
+        public Recipe AddNew(Recipe recipe) {
+            var repository = new RecipeRepository();
+            Recipe result = repository.Insert(recipe);
+
+            return result;
+        }
+
         [HttpGet]
-        public IEnumerable<Recipe> Get()
+        public IEnumerable<Recipe> GetAll()
         {
-            
             var repository = new RecipeRepository();
             var recipes = repository.GetAll();
-            var rng = new Random();
 
             return recipes;
-            // return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            // {
-            //     Date = DateTime.Now.AddDays(index),
-            //     TemperatureC = rng.Next(-20, 55),
-            //     Summary = Summaries[rng.Next(Summaries.Length)]
-            // })
-            // .ToArray();
         }
     }
 }
