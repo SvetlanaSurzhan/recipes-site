@@ -38,6 +38,7 @@ namespace RecipeWebApplication.Repositories
 
         public Recipe GetById(int recipeId)
         {
+            // Gets recipe by Id from database
             using (var context = new RecipeContext())
             {
                var recipe = context.Recipes
