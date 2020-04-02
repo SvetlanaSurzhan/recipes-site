@@ -11,13 +11,15 @@ namespace RecipeWebApplication.Repositories
 {
     public class RecipeRepository : IRecipeRepository
     {
-        public void Insert(Recipe recipe)
+        public Recipe Insert(Recipe recipe)
         {
             using (var context = new RecipeContext())
             {
-
+                context.Recipes.Add(recipe);
                 // Saves changes
                 context.SaveChanges();
+
+                return recipe;
             }
         }
 
@@ -31,8 +33,8 @@ namespace RecipeWebApplication.Repositories
                   .Include(p => p.Type)
                   .ToList();
 
-                  return recipes;
+                return recipes;
             }
         }
     }
-}        
+}
