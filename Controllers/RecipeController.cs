@@ -36,5 +36,13 @@ namespace RecipeWebApplication.Controllers
 
             return recipes;
         }
+
+        [HttpGet("{recipeId}")]
+        public Recipe GetById(int recipeId)
+        {
+            var repository = new RecipeRepository();
+
+            return repository.GetById(recipeId);
+        }
     }
 }
