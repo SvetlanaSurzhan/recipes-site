@@ -11,6 +11,6 @@ namespace RecipeWebApplication.EntityDatabase
         public DbSet<Type> Types { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder
-                .UseMySQL("server=localhost;database=recipeDb;user=sveta;password=123");       
+            .UseMySQL("server=localhost;database=recipeDb;user=sveta;password=123");       
     }
 }
