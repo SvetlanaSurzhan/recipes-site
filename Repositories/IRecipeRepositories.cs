@@ -8,5 +8,7 @@ namespace RecipeWebApplication.Repositories
         Recipe Insert(Recipe recipe);
 
         List<Recipe> GetAll();
+
+        Recipe GetById(int recipeId);
     }
 }
