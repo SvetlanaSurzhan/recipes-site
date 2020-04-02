@@ -32,8 +32,20 @@ namespace RecipeWebApplication.Repositories
                   .Include(p => p.Ingredients)
                   .Include(p => p.Type)
                   .ToList();
-
                 return recipes;
+            }
+        }
+
+        public Recipe GetById(int recipeId)
+        {
+            using (var context = new RecipeContext())
+            {
+               var recipe = context.Recipes
+                  .Include(p => p.Ingredients)
+                  .Include(p => p.Type)
+                  .Where(p => p.RecipeId == recipeId)
+                  .FirstOrDefault();                
+                return recipe;
             }
         }
     }
