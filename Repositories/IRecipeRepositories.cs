@@ -5,7 +5,7 @@ namespace RecipeWebApplication.Repositories
 {
     interface IRecipeRepository
     {
-        void Insert(Recipe recipe);
+        Recipe Insert(Recipe recipe);
 
         List<Recipe> GetAll();
     }
