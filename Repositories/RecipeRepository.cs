@@ -18,7 +18,6 @@ namespace RecipeWebApplication.Repositories
                 context.Recipes.Add(recipe);
                 // Saves changes
                 context.SaveChanges();
-
                 return recipe;
             }
         }
