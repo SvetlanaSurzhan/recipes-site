@@ -44,5 +44,12 @@ namespace RecipeWebApplication.Controllers
 
             return repository.GetById(recipeId);
         }
+
+        [HttpDelete("{recipeId}")]
+        public void DeleteRecipe(int recipeId)
+        {
+           var repository = new RecipeRepository(); 
+           repository.DeleteRecipe(recipeId);
+        }
     }
 }
