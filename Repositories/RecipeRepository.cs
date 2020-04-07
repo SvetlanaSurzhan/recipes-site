@@ -48,5 +48,19 @@ namespace RecipeWebApplication.Repositories
                 return recipe;
             }
         }
+
+        public void DeleteRecipe(int recipeId)
+        {
+            using (var context = new RecipeContext())
+            {
+                var recipe = context.Recipes
+                  .Include(p => p.Ingredients)
+                  .Where(p => p.RecipeId == recipeId)
+                  .FirstOrDefault();
+                context.Ingredients.RemoveRange(recipe.Ingredients);
+                context.Recipes.Remove(recipe);
+                context.SaveChanges();
+            }
+        }
     }
 }
