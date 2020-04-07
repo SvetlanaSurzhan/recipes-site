@@ -10,5 +10,7 @@ namespace RecipeWebApplication.Repositories
         List<Recipe> GetAll();
 
         Recipe GetById(int recipeId);
+
+        void DeleteRecipe(int recipeId);
     }
 }
