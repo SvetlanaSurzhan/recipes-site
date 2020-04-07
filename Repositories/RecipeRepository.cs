@@ -62,5 +62,15 @@ namespace RecipeWebApplication.Repositories
                 context.SaveChanges();
             }
         }
+
+        public Recipe UpdateRecipe(Recipe updatedRecipe)
+        {
+           using (var context = new RecipeContext())
+           {
+               context.Recipes.Update(updatedRecipe);
+               context.SaveChanges();
+               return updatedRecipe;
+           } 
+        }
     }
 }

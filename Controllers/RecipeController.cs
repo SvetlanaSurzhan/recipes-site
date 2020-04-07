@@ -51,5 +51,11 @@ namespace RecipeWebApplication.Controllers
            var repository = new RecipeRepository(); 
            repository.DeleteRecipe(recipeId);
         }
+
+        public Recipe UpdateRecipe(Recipe updatedRecipe)
+        {
+            var repository = new RecipeRepository(); 
+            return repository.UpdateRecipe(updatedRecipe);
+        }
     }
 }
