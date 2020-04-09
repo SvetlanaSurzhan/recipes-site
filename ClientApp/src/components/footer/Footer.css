@@ -1,0 +1,12 @@
+.nav-footer{
+    display: flex;
+    align-items: center;
+    padding: 1em;
+	margin: 0;
+    font-family: 'PT Serif', serif;
+    background-color: aqua;
+    position: relative;
+    clear: both;
+    height: 5em;
+    margin-top: - 5em;
+}
