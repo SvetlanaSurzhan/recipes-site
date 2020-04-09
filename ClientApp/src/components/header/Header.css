@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif|Shadows+Into+Light&display=swap');
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	font-family: 'PT Serif', serif;
+}
+
+.header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+	background-color: aqua ;
+}
+
+.nav-menu{
+	font-size: large;
+	text-decoration: none;
+}
+
+.logo{
+	cursor: pointer;
+	font-size: x-large;
+	;
+	
+}
+
+.filter-menu li{
+	display: inline-block;
+	padding: 0px 20px;
+}
+
+button li{
+	font-weight: 500;
+	font-size: medium;
+	color: aliceblue;
+	text-decoration: none;
+	background-color: darkslategray;
+	border: none;
+	border-radius: 30px;
+}
+
