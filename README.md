@@ -51,10 +51,10 @@ Site of recipes where users will be able to browse recipes by categories, create
   - [x] Create Entity Models and tables. <!-- - Deleted Create Mapping.---->
 #### Week 3
   - [x] Get API endpoints (get all, by Id)
-  - [ ] Create endpoints
+  - [x] Create endpoints
 #### Week 4 - 7
-  - [ ] Update endpoint
-  - [ ] Delete endpoint
+  - [x] Update endpoint
+  - [x] Delete endpoint
   - [ ] Create application shell (header, footer, background)
   - [ ] Create React recipe component
   - [ ] Create React new recipe/update recipe pages (with components)
