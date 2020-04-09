@@ -51,7 +51,7 @@ namespace RecipeWebApplication.Controllers
            var repository = new RecipeRepository(); 
            repository.DeleteRecipe(recipeId);
         }
-
+        [HttpPut]
         public Recipe UpdateRecipe(Recipe updatedRecipe)
         {
             var repository = new RecipeRepository(); 
