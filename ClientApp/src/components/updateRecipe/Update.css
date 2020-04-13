@@ -1,0 +1,13 @@
+.update-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 10px;
+}
+h2{
+    text-transform: uppercase;
+}
+.img-item{
+    max-height: 300px;
+    padding: 10px;
+}
