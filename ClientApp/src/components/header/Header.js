@@ -10,12 +10,12 @@ class Header extends React.Component {
     render() {
         return (
             <div>
-                <header className="header">
-                        <div className="logo column">
+                <header className="header-container">
+                        <div className="logo-item">
                             <img src={logo} alt="logo" />
                             Homemade Food
                         </div>
-                        <nav role="filtration" className="nav-menu column">
+                        <nav role="filtration" className="menu-item">
                             <ul id="menu" className="filter-menu">
                                 <li><button onClick={this.filter}>Breakfast</button></li>
                                 <li><button onClick={this.filter}>Lunch</button></li>
