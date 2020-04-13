@@ -10,9 +10,28 @@
     justify-content: space-between;
     align-items: center;
     padding: 1em;
-    background-color: aqua;
+    background-color: rgb(240, 201, 168);
     max-height: 20vh;
 }
+.links-img-items{
+    display: block;
+    align-items: baseline;
+}
+.links-img-items li{
+    display: inline-block;
+    padding-right: 10px;
+}
+h4{
+    padding: 10px 10px; 
+}
+.social-links-item{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em;
+}
+
+
 
 
 
