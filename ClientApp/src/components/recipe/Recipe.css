@@ -1,0 +1,20 @@
+*{
+	box-sizing: border-box;
+	font-family: 'PT Serif', serif;
+}
+.recipe-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 20px;
+}
+.img-item{
+    max-height: 200px;
+}
+.recipe-items{
+    padding: 10px 20px 10px 20px;
+}
