@@ -55,9 +55,9 @@ Site of recipes where users will be able to browse recipes by categories, create
 #### Week 4 - 7
   - [x] Update endpoint
   - [x] Delete endpoint
-  - [ ] Create application shell (header, footer, background)
-  - [ ] Create React recipe component
-  - [ ] Create React new recipe/update recipe pages (with components)
+  - [x] Create application shell (header, footer, background)
+  - [x] Create React recipe component
+  - [x] Create React new recipe/update recipe pages (with components)
   - [ ] Integrate Client side with ARI
   - [ ] UAT (user accepted testing)
   
