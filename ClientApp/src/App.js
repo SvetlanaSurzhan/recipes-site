@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Create from './components/createRecipe/Create';
 import Update from './components/updateRecipe/Update';
 import Shell from './components/shell/Shell';
-import './custom.css'
 import Gallery from './components/gallery/Gallery';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
