@@ -6,38 +6,41 @@
 	font-family: 'PT Serif', serif;
 }
 
-.header{
+.header-container{
 	display: flex;
+	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 	padding: 1em;
-	background-color: aqua ;
+	background-color: aqua;
+	max-height: 20vh;
 }
 
-.nav-menu{
-	font-size: large;
+.menu-item{
 	text-decoration: none;
 }
 
-.logo{
+.logo-item{
 	cursor: pointer;
 	font-size: x-large;
-	;
-	
 }
 
 .filter-menu li{
 	display: inline-block;
-	padding: 0px 20px;
+	padding: 20px 50px 0px 20px;
 }
 
-button li{
+button{
 	font-weight: 500;
 	font-size: medium;
-	color: aliceblue;
+	color: white;
 	text-decoration: none;
-	background-color: darkslategray;
+	background-color: black;
 	border: none;
-	border-radius: 30px;
+	border-radius: 5px;
+	display: inline-block;
+	text-align: center;
+	padding: 10px 20px 10px 20px;
+	font-size: large;
 }
 
