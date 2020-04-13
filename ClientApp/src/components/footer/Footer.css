@@ -1,12 +1,18 @@
-.nav-footer{
+*{
+	box-sizing: border-box;
+	margin: 0;
+	font-family: 'PT Serif', serif;
+}
+
+.footer-container{
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     padding: 1em;
-	margin: 0;
-    font-family: 'PT Serif', serif;
     background-color: aqua;
-    position: relative;
-    clear: both;
-    height: 5em;
-    margin-top: - 5em;
+    max-height: 20vh;
 }
+
+
+
