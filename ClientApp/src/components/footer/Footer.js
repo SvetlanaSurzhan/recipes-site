@@ -3,6 +3,7 @@ import './Footer.css';
 import instagram from './instagram.png';
 import facebook from './facebook.png';
 import linkedin from './linkedin.png';
+import whatsapp from './whatsapp.png';
 
 class Footer extends React.Component {
     render() {
@@ -23,6 +24,7 @@ class Footer extends React.Component {
                             <li><img src={instagram} className="instagram-icon" /></li>
                             <li><img src={facebook} className="facebook-icon" /></li>
                             <li><img src={linkedin} className="linkedin-icon" /></li>
+                            <li><img src={whatsapp} className="whatsapp-icon" /></li>
                         </ul>
                     </div>
 
