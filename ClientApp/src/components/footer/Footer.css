@@ -10,12 +10,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 1em;
-    background-color: rgb(240, 201, 168);
+    background-color:#292929;
     max-height: 20vh;
+    color: white;
 }
 .links-img-items{
-    display: block;
-    align-items: baseline;
+    display: inline-block;
+    align-items: center;
+    padding: 0;
 }
 .links-img-items li{
     display: inline-block;
@@ -27,9 +29,17 @@ h4{
 .social-links-item{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 1em;
 }
+.instagram-icon, .facebook-icon, .linkedin-icon, .whatsapp-icon{
+    width: 100%;
+    height: auto;
+}
+.facebook-icon, .instagram-icon{
+    background-color: white;
+}
+
 
 
 
