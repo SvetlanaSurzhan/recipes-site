@@ -8,12 +8,12 @@
     justify-content: center;
     align-items: baseline;
     background-color: white;
-    border: 1px solid;
-    border-radius: 5px;
     margin: 20px;
 }
 .img-item{
-    max-height: 200px;
+    max-height: 20em;
+    max-width: auto;
+    padding: 0;
 }
 .recipe-items{
     padding: 10px 20px 10px 20px;
