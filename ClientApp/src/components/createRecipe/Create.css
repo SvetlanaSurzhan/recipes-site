@@ -1,5 +1,6 @@
 .create-container{
     display: flex;
+    align-items: center;
     flex-direction: column;
     flex-wrap: nowrap;
     padding: 5px;
@@ -10,7 +11,8 @@ h2 {
 }
 .img-item{
     max-height: 300px;
-    padding: 10px;
+    max-width: 500px;
+    padding: 5px;
 }
 .upload-form{
     display: flex;
