@@ -9,21 +9,6 @@ class Gallery extends React.Component {
                 <Recipe/>
                 <Recipe/>
                 <Recipe/>
-                <Recipe/>
-                <Recipe/>
-                <Recipe/>
-                <Recipe/>
-                <Recipe/>
-                <Recipe/>
-                <Recipe/>
-                <Recipe/>
-                <Recipe/>
-                <Recipe/>
-                <Recipe/>
-                <Recipe/>
-                <Recipe/>
-                <Recipe/>
-                <Recipe/>
             </div>
         );
     }
