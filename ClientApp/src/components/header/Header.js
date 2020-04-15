@@ -12,8 +12,8 @@ class Header extends React.Component {
             <div>
                 <header className="header-container">
                         <div className="logo-item">
-                            <img src={logo} alt="logo" />
-                            Homemade Food
+                            <img src={logo} alt="logo" className="image-item"/>
+                            <h3>Homemade Food</h3>
                         </div>
                         <nav role="filtration" className="menu-item">
                             <ul id="menu" className="filter-menu">

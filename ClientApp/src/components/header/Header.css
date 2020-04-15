@@ -12,8 +12,9 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 1em;
-	background-color: rgb(240, 201, 168);
+	background-color:#292929;
 	max-height: 20vh;
+	color: white;
 }
 
 .menu-item{
@@ -21,8 +22,18 @@
 }
 
 .logo-item{
-	cursor: pointer;
-	font-size: x-large;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+h3{
+	padding: 5px 20px;
+	margin: 0;
+	width: 10em;
+}
+.image-item{
+	width: 30%;
+    height: auto;
 }
 
 .filter-menu li{
