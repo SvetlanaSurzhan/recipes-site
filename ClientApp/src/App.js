@@ -5,10 +5,8 @@ import Shell from './components/shell/Shell';
 import Gallery from './components/gallery/Gallery';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-
 export default class App extends Component {
   static displayName = App.name;
-
   render() {
     return (
       <Shell>
