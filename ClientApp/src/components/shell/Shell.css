@@ -2,9 +2,10 @@
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: #f5f5f5;
+    background-color: #fcf9f9f8;
 }
 
 .main-content {
   flex: 1;
+  margin-top: 10vh;
 }
