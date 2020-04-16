@@ -19,11 +19,6 @@
 	position: fixed;
 	width: 100%;
 }
-
-.menu-item{
-	max-height: 10vh;
-}
-
 .logo-item{
 	display: flex;
 	flex-direction: row;
@@ -35,29 +30,5 @@ h3{
 	margin: 0;
 	width: 10em;
 	text-shadow: 2px 2px 4px #000000;
-}
-.image-item{
-	width: auto;
-	max-height: 10vh;
-}
-
-.filter-menu li{
-	display: inline-block;
-	padding: 20px 50px 0px 20px;
-}
-
-button{
-	font-weight: 500;
-	font-size: medium;
-	color: white;
-	text-decoration: none;
-	background-color: black;
-	border: none;
-	border-radius: 5px;
-	display: inline-block;
-	text-align: center;
-	padding: 10px 20px 10px 20px;
-	font-size: large;
-	max-height: 8vh;
 }
 
