@@ -11,7 +11,7 @@ class Footer extends React.Component {
             <div>
                 <footer className="footer-container">
                     <div className="contact-item">
-                        <h4>Contact</h4>
+                        <h5>Contact</h5>
                         <address>
                             Louisville, KY 40245<br />
                             E: svetlana.d.surzhan@gmail.com<br />
@@ -19,7 +19,7 @@ class Footer extends React.Component {
                         </address>
                     </div>
                     <div className="social-links-item">
-                        <h4>Follow Us</h4>
+                        <h5>Follow Us</h5>
                         <ul className="links-img-items">
                             <li><img src={instagram} className="instagram-icon" /></li>
                             <li><img src={facebook} className="facebook-icon" /></li>
