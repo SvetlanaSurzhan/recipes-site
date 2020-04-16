@@ -13,27 +13,32 @@
 	align-items: center;
 	padding: 1em;
 	background-color:#292929;
-	max-height: 20vh;
+	max-height: 10vh;
 	color: white;
+	box-shadow: 0 5px 10px -5px #000;
+	position: fixed;
+	width: 100%;
 }
 
 .menu-item{
-	text-decoration: none;
+	max-height: 10vh;
 }
 
 .logo-item{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	max-height: 10vh;
 }
 h3{
 	padding: 5px 20px;
 	margin: 0;
 	width: 10em;
+	text-shadow: 2px 2px 4px #000000;
 }
 .image-item{
-	width: 30%;
-    height: auto;
+	width: auto;
+	max-height: 10vh;
 }
 
 .filter-menu li{
@@ -53,5 +58,6 @@ button{
 	text-align: center;
 	padding: 10px 20px 10px 20px;
 	font-size: large;
+	max-height: 8vh;
 }
 
