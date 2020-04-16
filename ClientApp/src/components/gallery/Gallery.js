@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Gallery.css';
 import Recipe from '../recipe/Recipe';
 import posts from '../recipe/recipeData';
+import GalleryButton from '../button/GalleryButton';
 
 class Gallery extends React.Component {
     constructor(props) {
@@ -13,11 +14,16 @@ class Gallery extends React.Component {
     render() {
         return (
             <div className="gallery-wrapper">
-                {this.state.posts.map((cake) => {
-                    return (
-                        <Recipe recipe={cake}/>
-                    );
-                })}
+                <div className="button-items">
+                    <GalleryButton/>
+                </div>
+                <div className="recipe-item">
+                    {this.state.posts.map((cake) => {
+                        return (
+                            <Recipe recipe={cake}/>
+                        );
+                    })}
+                </div>
             </div>
         );
     }

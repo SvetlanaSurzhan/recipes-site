@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif|Shadows+Into+Light&display=swap');
 .wrapper {
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     flex-direction: column;
     background-color: #fcf9f9f8;
