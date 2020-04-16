@@ -6,15 +6,17 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: baseline;
     background-color: white;
     margin: 20px;
 }
 .img-item{
-    max-height: 20em;
+    max-height: auto;
     max-width: auto;
     padding: 0;
 }
 .recipe-items{
+    display: flex;
+    flex-direction: column ;
     padding: 10px 20px 10px 20px;
+    align-items: center;
 }

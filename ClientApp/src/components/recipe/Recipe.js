@@ -7,7 +7,7 @@ class Recipe extends React.Component {
         return (
             <div className="recipe-container">
                 <div className="recipe-items">
-                    <img src={`data:image/png;base64,${this.props.recipe.picture}`} />
+                    <img className="img-item" src={`data:image/png;base64,${this.props.recipe.picture}`} />
                     <h5>{this.props.recipe.name}</h5>
                     <h6>Ingredients:</h6>
                     <p>
