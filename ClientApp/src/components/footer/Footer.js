@@ -19,7 +19,7 @@ class Footer extends React.Component {
                         </address>
                     </div>
                     <div className="social-links-item">
-                        <h5>Follow Us</h5>
+                        <h5>Follow me</h5>
                         <ul className="links-img-items">
                             <li><img src={instagram} className="instagram-icon" /></li>
                             <li><img src={facebook} className="facebook-icon" /></li>
