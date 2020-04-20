@@ -1,32 +1,52 @@
 import React, { Component } from 'react';
 import './Gallery.css';
 import Recipe from '../recipe/Recipe';
-import posts from '../recipe/recipeData';
+import recipesFromApi from '../recipe/recipeData';
 import GalleryButton from '../button/GalleryButton';
-import recipeType from '../button/TypeData';
+import recipeTypeFromApi from '../button/TypeData';
 
 class Gallery extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            posts: posts,
-            recipeType: recipeType
+            recipes: recipesFromApi,
+            filteredRecipes: recipesFromApi,
+            recipeType: recipeTypeFromApi
         };
+
+        this.filterRecipesByTypeId = this.filterRecipesByTypeId.bind(this);
+        this.showAllRecipes = this.showAllRecipes.bind(this);
     }
+
+    filterRecipesByTypeId(typeId) {
+        const filteredRecipes = this.state.recipes.filter(recipe => recipe.typeId === typeId);
+
+        this.setState( state => ({
+            filteredRecipes
+        }));
+    }
+
+    showAllRecipes() {
+        this.setState( state => ({
+            filteredRecipes: this.state.recipes
+        }));
+    }
+
     render() {
         return (
             <div className="gallery-wrapper">
                 <div className="button-items">
-                {this.state.recipeType.map((type) => {
+                    <GalleryButton onCLickHandler={this.showAllRecipes}/>
+                    {this.state.recipeType.map((type) => {
                         return (
-                            <GalleryButton  typeOfRecipe={type}/>
+                            <GalleryButton onCLickHandler={this.filterRecipesByTypeId} recipeType={type} />
                         );
                     })}
                 </div>
                 <div className="recipe-item">
-                    {this.state.posts.map((cake) => {
+                    {this.state.filteredRecipes.map((cake) => {
                         return (
-                            <Recipe recipe={cake}/>
+                            <Recipe recipe={cake} />
                         );
                     })}
                 </div>
