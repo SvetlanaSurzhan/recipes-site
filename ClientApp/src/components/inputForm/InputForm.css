@@ -1,0 +1,21 @@
+.img-item{
+    max-height: 300px;
+    max-width: 500px;
+    padding: 5px;
+}
+.upload-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    padding: 20px;
+}
+.recipe-form-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    padding: 5px;
+}
