@@ -10,10 +10,6 @@ const type = [
     {
         "name": "Dinner",
         "typeId": 3
-    },
-    {
-        "name": "Test",
-        "typeId": 4
     }
 ]
 export default type;    
