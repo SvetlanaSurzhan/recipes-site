@@ -9,15 +9,15 @@ export default class App extends Component {
   static displayName = App.name;
   render() {
     return (
-      <Shell>
-        <Router>
-          <div>
+      <Router>
+        <div>
+          <Shell>
             <Route path='/create' component={Create} />
             <Route path='/update/:id' component={Update} />
             <Route exact path='/' component={Gallery} />
-          </div>
-        </Router>
-      </Shell>
+          </Shell>
+        </div>
+      </Router>
     );
   }
 }
