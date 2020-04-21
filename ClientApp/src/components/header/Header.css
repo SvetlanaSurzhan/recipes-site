@@ -31,4 +31,11 @@ h3{
 	width: 10em;
 	text-shadow: 2px 2px 4px #000000;
 }
+.nav-menu{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	max-height: 10vh;
+	width: 30vw;
+}
 
