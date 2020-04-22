@@ -12,9 +12,11 @@ export default class App extends Component {
       <Router>
         <div>
           <Shell>
-            <Route path='/create' component={Create} />
-            <Route path='/update/:id' component={Update} />
-            <Route exact path='/' component={Gallery} />
+            <Switch>
+              <Route path='/create' component={Create} />
+              <Route path='/update/:id' component={Update} />
+              <Route exact path='/' component={Gallery} />
+            </Switch>
           </Shell>
         </div>
       </Router>
