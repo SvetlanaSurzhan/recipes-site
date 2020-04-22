@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Footer.css';
 import instagram from './instagram.png';
 import facebook from './facebook.png';

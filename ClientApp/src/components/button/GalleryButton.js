@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './GalleryButton.css';
-import Gallery from '../gallery/Gallery';
 
 class GalleryButton extends React.Component {
     render() {
@@ -10,7 +9,7 @@ class GalleryButton extends React.Component {
 
         return (
             <div>
-                <nav role="filtration" className="filter-menu">
+                <nav role="navigation" className="filter-menu">
                     <button onClick={(e) => this.props.onCLickHandler(typeId)}>
                         {buttonName}
                     </button>
