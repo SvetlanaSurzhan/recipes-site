@@ -1,9 +1,15 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .img-item{
     max-height: 300px;
     max-width: 500px;
     padding: 5px;
 }
-.upload-form{
+.upload-img-form{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,11 +17,27 @@
     align-content: space-between;
     padding: 20px;
 }
-.recipe-form-items{
+.recipe-form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: flex-start;
     padding: 5px;
+}
+.img-item{
+}
+.ingredient-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+.type-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
 }
