@@ -1,33 +1,38 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Update.css';
-import ChickenDrumstick from './ChickenDrumstick.jpg';
+import {
+    withRouter
+} from "react-router-dom";
+import recipes from '../recipe/recipeData';
+import InputForm from '../inputForm/InputForm';
+import recipeTypes from '../button/TypeData';
 
 
 class Update extends React.Component {
+    constructor(props) {
+        super(props);   
+        const id = this.props.match.params.id;
+        const existingRecipe = this.getRecipeById(id);
+        this.state = existingRecipe;     
+        this.updateRecipeApiCall = this.updateRecipeApiCall.bind(this);
+    }
+
+    getRecipeById(id) {
+        return recipes.find(r => r.recipeId.toString() === id);
+    }
+
+    updateRecipeApiCall(recipe) {
+        console.log(`SEND TO API TO SAVING ${recipe}`)
+    }
+
     render() {
         return (
             <div className="update-container">
-                <h2>View or update recipe</h2>
-                <img src={ChickenDrumstick} className="img-item" />
-                <form action="/action_page.php" className="upload-form">
-                    <label for="img">Select image:</label>
-                    <input type="file" id="img" name="img" accept="image/*"></input>
-                    <input type="submit"></input>
-                </form>
-                <form className="recipe-form-items">
-                    <label for="recipe-name">Name:</label>
-                    <input type="text" id="recipe-name" name="recipe-name"></input><br />
-                    <label for="type">Type:</label>
-                    <input type="text" id="type" name="type"></input><br />
-                    <label for="ingredients">Ingredients:</label>
-                    <input type="text" id="ingredients" name="ingredients"></input><br />
-                    <label for="description">Description:</label>
-                    <input type="text" id="description" name="description"></input><br />
-                </form>
-                <button onClick={this.save} className="save-button">Save</button>
+                <h2>Update recipe</h2>
+                <InputForm types={recipeTypes} recipe={this.state} onSave={this.updateRecipeApiCall}/>
             </div>
         );
     }
 }
 
-export default Update;
+export default withRouter(Update);

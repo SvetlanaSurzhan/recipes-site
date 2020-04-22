@@ -1,32 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Create.css';
-import ChickenDrumstick from './ChickenDrumstick.jpg';
+import InputForm from '../inputForm/InputForm';
+import recipeTypes from '../button/TypeData';
 
 class Create extends React.Component {
-    save(){
-        alert("New recipe saved");
+    constructor(props) {
+        super(props);
+
+        this.createNewRecipeApiCall = this.createNewRecipeApiCall.bind(this);
     }
+    
+    createNewRecipeApiCall = (newRecipe) => {
+        console.log('SEND CREATE NEW RECIPE API CALL', newRecipe);
+    }
+
     render() {
         return (
             <div className="create-container">
                 <h2>Create new recipe</h2>
-                <img src={ChickenDrumstick} className="img-item" />
-                <form action="/action_page.php" className="upload-form">
-                    <label for="img">Select image:</label>
-                    <input type="file" id="img" name="img" accept="image/*"></input>
-                    <input type="submit"></input>
-                </form>
-                <form className="recipe-form-items">
-                    <label for="recipe-name">Name:</label>
-                    <input type="text" id="recipe-name" name="recipe-name"></input><br />
-                    <label for="type">Type:</label>
-                    <input type="text" id="type" name="type"></input><br />
-                    <label for="ingredients">Ingredients:</label>
-                    <input type="text" id="ingredients" name="ingredients"></input><br />
-                    <label for="description">Description:</label>
-                    <input type="text" id="description" name="description"></input><br />
-                </form>
-                <button onClick={this.save} className="save-button">Save</button>
+                <InputForm types={recipeTypes} onSave={this.createNewRecipeApiCall}/>
             </div>
         );
     }
