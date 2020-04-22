@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Gallery.css';
 import Recipe from '../recipe/Recipe';
 import recipesFromApi from '../recipe/recipeData';
@@ -21,13 +21,13 @@ class Gallery extends React.Component {
     filterRecipesByTypeId(typeId) {
         const filteredRecipes = this.state.recipes.filter(recipe => recipe.typeId === typeId);
 
-        this.setState( state => ({
+        this.setState(state => ({
             filteredRecipes
         }));
     }
 
     showAllRecipes() {
-        this.setState( state => ({
+        this.setState(state => ({
             filteredRecipes: this.state.recipes
         }));
     }
@@ -36,17 +36,17 @@ class Gallery extends React.Component {
         return (
             <div className="gallery-wrapper">
                 <div className="button-items">
-                    <GalleryButton onCLickHandler={this.showAllRecipes}/>
+                    <GalleryButton onCLickHandler={this.showAllRecipes} />
                     {this.state.recipeType.map((type) => {
                         return (
-                            <GalleryButton onCLickHandler={this.filterRecipesByTypeId} recipeType={type} />
+                            <GalleryButton key={type.typeId} onCLickHandler={this.filterRecipesByTypeId} recipeType={type} />
                         );
                     })}
                 </div>
                 <div className="recipe-item">
-                    {this.state.filteredRecipes.map((cake) => {
+                    {this.state.filteredRecipes.map((recipe) => {
                         return (
-                            <Recipe recipe={cake} />
+                            <Recipe history={this.props.history} key={recipe.recipeId} recipe={recipe} />
                         );
                     })}
                 </div>
