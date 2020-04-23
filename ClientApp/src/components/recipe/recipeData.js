@@ -35,7 +35,7 @@ const posts = [
             }
         ],
         type: {
-        "name": "Breakfast",
+        "type": "Breakfast",
         "typeId": 1}
     },
     {
@@ -67,7 +67,7 @@ const posts = [
             }
         ],
         type: {
-            "name": "Dinner",
+            "type": "Dinner",
             "typeId": 3
         }
     },
@@ -127,7 +127,7 @@ const posts = [
                 "recipeId": 123
             }    
         ],
-        type: {"name": "Lunch",
+        type: {"type": "Lunch",
         "typeId": 2}
     }
 ];

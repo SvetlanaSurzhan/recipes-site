@@ -1,14 +1,14 @@
 const type = [
     {
-        "name": "Breakfast",
+        "type": "Breakfast",
         "typeId": 1
     },
     {
-        "name": "Lunch",
+        "type": "Lunch",
         "typeId": 2
     },
     {
-        "name": "Dinner",
+        "type": "Dinner",
         "typeId": 3
     }
 ]
