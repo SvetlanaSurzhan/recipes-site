@@ -118,6 +118,7 @@ class InputForm extends React.Component {
                     <label htmlFor="img">Select image:</label>
                     <input
                         type="file"
+                        className="image-file-upload"
                         id="myImage"
                         name="myImage"
                         onChange={this.handleImageUpload}
@@ -132,7 +133,6 @@ class InputForm extends React.Component {
                         id="recipe-name"
                         name="recipe-name"
                     ></input>
-                    <br />
 
                     <label htmlFor="description">Description:</label>
                     <input
@@ -142,12 +142,11 @@ class InputForm extends React.Component {
                         id="description"
                         name="description"
                     ></input>
-                    <br />
 
                     <label>Select recipe type:</label>
                     <select value={this.state.recipe.type.typeId} onChange={this.handleDropDownSelect}>
                         {this.props.types.map((type, i) => (
-                            <option key={i} value={type.typeId}>{type.name}</option>
+                            <option key={i} value={type.typeId}>{type.type}</option>
                         ))}
                     </select>
 
@@ -178,7 +177,7 @@ class InputForm extends React.Component {
                     ></input>
                     <button onClick={this.handleAddIngredient}>
                         Add Ingredient
-                        </button>
+                    </button>
                     <button type="submit">Save</button>
                 </form>
             </div>

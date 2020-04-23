@@ -9,14 +9,6 @@
     max-width: 500px;
     padding: 5px;
 }
-.upload-img-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: space-between;
-    padding: 20px;
-}
 .recipe-form{
     display: flex;
     flex-direction: column;
@@ -25,19 +17,28 @@
     align-content: flex-start;
     padding: 5px;
 }
-.img-item{
+label, input{
+    margin: 5px;
 }
-.ingredient-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
+select, button, img{
+    margin: 10px;
 }
-.type-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px;
+.image-file-upload {
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+    width: 200px;
 }
+
+
+
+
+
+
