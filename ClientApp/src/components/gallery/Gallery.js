@@ -19,7 +19,7 @@ class Gallery extends React.Component {
     }
 
     filterRecipesByTypeId(typeId) {
-        const filteredRecipes = this.state.recipes.filter(recipe => recipe.typeId === typeId);
+        const filteredRecipes = this.state.recipes.filter(recipe => recipe.type.typeId === typeId);
 
         this.setState(state => ({
             filteredRecipes
