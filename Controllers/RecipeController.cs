@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RecipeWebApplication.EntityDatabase.Models;
@@ -40,9 +37,20 @@ namespace RecipeWebApplication.Controllers
         [HttpGet("{recipeId}")]
         public Recipe GetById(int recipeId)
         {
-            var repository = new RecipeRepository();
+            try
+            {
+                var repository = new RecipeRepository();
 
-            return repository.GetById(recipeId);
+                _logger.LogInformation(null, "Getting Recipe By Id", null);
+
+                return repository.GetById(recipeId);
+            }
+            catch (System.Exception e)
+            {
+                _logger.LogError(null, e, "Failed to Get Recipe by Id", null);
+
+                throw e;
+            }
         }
 
         [HttpDelete("{recipeId}")]
