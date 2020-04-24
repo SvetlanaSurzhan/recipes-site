@@ -113,7 +113,7 @@ class InputForm extends React.Component {
             <div className="form">
                 <h4>Recipe:</h4>
                 <form onSubmit={this.handleSubmit(this.state.recipe)} className="recipe-form">
-                    <img className="img-item" src={this.state.recipe.picture} />
+                    <img alt="img" className="img-item" src={this.state.recipe.picture} />
 
                     <label htmlFor="img">Select image:</label>
                     <input

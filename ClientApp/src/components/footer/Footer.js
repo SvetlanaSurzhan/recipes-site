@@ -21,10 +21,10 @@ class Footer extends React.Component {
                     <div className="social-links-item">
                         <h5>Follow me</h5>
                         <ul className="links-img-items">
-                            <li><img src={instagram} className="instagram-icon" /></li>
-                            <li><img src={facebook} className="facebook-icon" /></li>
-                            <li><img src={linkedin} className="linkedin-icon" /></li>
-                            <li><img src={whatsapp} className="whatsapp-icon" /></li>
+                            <li><img alt="instagram-icon" src={instagram} className="instagram-icon" /></li>
+                            <li><img alt="facebook-icon" src={facebook} className="facebook-icon" /></li>
+                            <li><img alt="linkedin-icon" src={linkedin} className="linkedin-icon" /></li>
+                            <li><img alt="whatsapp-icon" src={whatsapp} className="whatsapp-icon" /></li>
                         </ul>
                     </div>
 
