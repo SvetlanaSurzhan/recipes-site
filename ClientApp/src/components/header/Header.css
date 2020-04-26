@@ -1,11 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Serif|Shadows+Into+Light&display=swap');
-
-*{
-	box-sizing: border-box;
-	margin: 0;
-	font-family: 'PT Serif', serif;
-}
-
 .header-container{
 	display: flex;
 	flex-direction: row;

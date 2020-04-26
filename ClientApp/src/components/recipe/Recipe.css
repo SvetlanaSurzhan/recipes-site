@@ -1,7 +1,3 @@
-*{
-	box-sizing: border-box;
-	font-family: 'PT Serif', serif;
-}
 .recipe-container{
     display: flex;
     flex-direction: row;

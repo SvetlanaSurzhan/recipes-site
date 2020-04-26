@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Serif|Shadows+Into+Light&display=swap');
+*{
+	font-family: 'PT Serif', serif;
+}
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    flex-direction: column;
-    background-color: #fcf9f9f8;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #fcf9f9f8;
 }
 
 .main-content {
-  flex: 1;
+  flex:  1 0 auto;
   margin-top: 10vh;
 }
