@@ -2,7 +2,6 @@ import React from 'react';
 import './Recipe.css';
 
 class Recipe extends React.Component {
-
     render() {
         return (
             <div className="recipe-container" onClick={() => (this.props.history.push(`/update/${this.props.recipe.recipeId}`))}>
@@ -21,6 +20,7 @@ class Recipe extends React.Component {
                             );
                         })}
                     </p>
+                    <button onClick={this.props.onDeleteClick}>Delete</button>
                 </div>
             </div>
         );
