@@ -65,7 +65,6 @@ class InputForm extends React.Component {
                 newIngredient[key] = value;
             }
 
-
             this.setState({newIngredient});
 
             console.log(this.state.newIngredient);
@@ -106,7 +105,6 @@ class InputForm extends React.Component {
             this.props.onSave(recipe)
         }
     }
-
     
     render() {  
         return (
