@@ -4,7 +4,7 @@ import './GalleryButton.css';
 class GalleryButton extends React.Component {
     render() {
         const recipeType = this.props.recipeType;
-        const buttonName = recipeType ? recipeType.type : 'All';
+        const buttonName = recipeType ? recipeType.name : 'All';
         const typeId = recipeType ? recipeType.typeId : undefined;
 
         return (
