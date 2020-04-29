@@ -3,33 +3,53 @@ import './Update.css';
 import {
     withRouter
 } from "react-router-dom";
-import recipes from '../recipe/recipeData';
 import InputForm from '../inputForm/InputForm';
-import recipeTypes from '../button/TypeData';
+import {TypeRecipeApi} from '../../services/TypeRecipeApi'
+import {RecipeApi} from '../../services/RecipeApi'
 
 
 class Update extends React.Component {
     constructor(props) {
         super(props);   
-        const id = this.props.match.params.id;
-        const existingRecipe = this.getRecipeById(id);
-        this.state = existingRecipe;     
+
+        this.id = this.props.match.params.id; //getting recipe id from url address
+        this.typeApi = new TypeRecipeApi();
+        this.recipeApi = new RecipeApi();
+
+        this.state = {
+            recipe: {},
+            types: []
+        };
+
         this.updateRecipeApiCall = this.updateRecipeApiCall.bind(this);
     }
 
-    getRecipeById(id) {
-        return recipes.find(r => r.recipeId.toString() === id);
+    async componentDidMount() {
+        const types = await this.typeApi.getAllTypes();
+        const recipe = await this.recipeApi.getRecipeById(this.id);
+
+        this.setState({
+            recipe,
+            types
+        })
     }
 
-    updateRecipeApiCall(recipe) {
-        console.log(`SEND TO API TO SAVING ${recipe}`)
+    async updateRecipeApiCall(recipe) {   
+        await this.recipeApi.updateRecipe(recipe);
     }
 
     render() {
         return (
             <div className="update-container">
                 <h2>Update recipe</h2>
-                <InputForm types={recipeTypes} recipe={this.state} onSave={this.updateRecipeApiCall}/>
+                {this.state.recipe.recipeId
+                    ? <InputForm 
+                        types={this.state.types} 
+                        recipe={this.state.recipe} 
+                        onSave={this.updateRecipeApiCall}/>
+                    : "Loading ..."
+                }
+                
             </div>
         );
     }

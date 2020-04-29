@@ -1,6 +1,6 @@
 import config from '../config.json'
 
-class TypeRecipeApi {
+export class TypeRecipeApi {
     constructor(){
         this.baseUrl = config.baseUrl;
         this.recourse = 'type';
@@ -19,5 +19,3 @@ class TypeRecipeApi {
         }
     }
 };
-
-export default TypeRecipeApi;

@@ -1,6 +1,6 @@
 import config from '../config.json'
 
-class RecipeApi {
+export class RecipeApi {
     constructor(){
         this.baseUrl = config.baseUrl;
         this.recourse = 'recipe';
@@ -34,9 +34,15 @@ class RecipeApi {
 
     async updateRecipe(recipe) {
         try {
+            recipe.typeId = recipe.type.typeId;
+            recipe.type = null;
+
             const response = await fetch(`${this.baseUrl}/${this.recourse}`, {
                 method: 'PUT',
-                body: JSON.stringify({recipe})
+                body: JSON.stringify(recipe),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             });
 
             return response.json();
@@ -48,9 +54,15 @@ class RecipeApi {
 
     async createNewRecipe(recipe){
         try {
+            recipe.typeId = recipe.type.typeId;
+            recipe.type = null;
+
             const response = await fetch(`${this.baseUrl}/${this.recourse}`, {
                 method: 'POST',
-                body: JSON.stringify({recipe})
+                body: JSON.stringify(recipe),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             });
 
             return response.json();
@@ -60,7 +72,7 @@ class RecipeApi {
         }
     }
 
-    async DeleteRecipe(recipeId){
+    async deleteRecipe(recipeId){
         try {
             const response = await fetch(`${this.baseUrl}/${this.recourse}/${recipeId}`, {
                 method: 'DELETE'
@@ -76,8 +88,4 @@ class RecipeApi {
             throw error;    
         }
     }
-
-    
 };
-
-export default RecipeApi

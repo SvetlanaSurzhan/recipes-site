@@ -1,17 +1,20 @@
 import React from 'react';
 import './Gallery.css';
 import Recipe from '../recipe/Recipe';
-import recipesFromApi from '../recipe/recipeData';
 import GalleryButton from '../button/GalleryButton';
-import recipeTypeFromApi from '../button/TypeData';
+import {RecipeApi} from '../../services/RecipeApi';
+import {TypeRecipeApi} from '../../services/TypeRecipeApi';
 
 class Gallery extends React.Component {
     constructor(props) {
         super(props);
+
+        this.recipeApi = new RecipeApi();
+        this.typeApi = new TypeRecipeApi();
         this.state = {
-            recipes: recipesFromApi,
-            filteredRecipes: recipesFromApi,
-            recipeType: recipeTypeFromApi
+            recipes: [],
+            filteredRecipes: [],
+            types: []
         };
 
         this.filterRecipesByTypeId = this.filterRecipesByTypeId.bind(this);
@@ -19,34 +22,48 @@ class Gallery extends React.Component {
         this.handleDeleteRecipe = this.handleDeleteRecipe.bind(this);
     }
 
+    async componentDidMount() {
+        const recipes = await this.recipeApi.getAllRecipes();
+        const types = await this.typeApi.getAllTypes();
+
+        this.setState({
+            recipes,
+            types,
+            filteredRecipes: [...recipes]
+        })
+    }
+
     filterRecipesByTypeId(typeId) {
         const filteredRecipes = this.state.recipes.filter(recipe => recipe.type.typeId === typeId);
 
-        this.setState(state => ({
+        this.setState({
             filteredRecipes
-        }));
+        });
     }
 
     showAllRecipes() {
-        this.setState(state => ({
-            filteredRecipes: this.state.recipes
-        }));
+        this.setState({
+            filteredRecipes: [...this.state.recipes]
+        });
     }
 
     handleDeleteRecipe(recipeId) {
-        return (event) =>{
+        return async (event) =>{
             event.stopPropagation(); 
 
-            //api call
-            const recipes = [...this.state.recipes];
-            const index = this.getIndexByRecipeId(recipeId, recipes);
+            const isDeleted = await this.recipeApi.deleteRecipe(recipeId);
 
-            if (index > -1) {
-                recipes.splice(index, 1);
-                this.setState({
-                    filteredRecipes: recipes,
-                    recipes: recipes
-                });
+            if (isDeleted) { // if recipe gets deleted from db we can remove it from our state
+                const recipes = [...this.state.recipes];
+                const index = this.getIndexByRecipeId(recipeId, recipes);
+
+                if (index > -1) {
+                    recipes.splice(index, 1);
+                    this.setState({
+                        filteredRecipes: [...recipes],
+                        recipes: recipes
+                    });
+                }
             }
         };  
     }
@@ -54,7 +71,7 @@ class Gallery extends React.Component {
     getIndexByRecipeId(recipeId, recipes) {
         for (let i = 0; i < recipes.length; i++) {
             const recipe = recipes[i];
-            console.log(recipe.recipeId);
+            
             if (recipe.recipeId === recipeId) {
                 return i;
             }
@@ -68,18 +85,27 @@ class Gallery extends React.Component {
             <div className="gallery-wrapper">
                 <div className="button-items">
                     <GalleryButton onCLickHandler={this.showAllRecipes} />
-                    {this.state.recipeType.map((type) => {
+                    {this.state.types.map((type) => {
                         return (
-                            <GalleryButton key={type.typeId} onCLickHandler={this.filterRecipesByTypeId} recipeType={type} />
+                            <GalleryButton 
+                                key={type.typeId} 
+                                onCLickHandler={this.filterRecipesByTypeId} 
+                                recipeType={type} />
                         );
                     })}
                 </div>
                 <div className="recipe-item">
-                    {this.state.filteredRecipes.map((recipe) => {
-                        return (
-                            <Recipe onDeleteClick={this.handleDeleteRecipe(recipe.recipeId)} history={this.props.history} key={recipe.recipeId} recipe={recipe} />
-                        );          
-                    })}
+                    {this.state.recipes.length > 0 ?
+                        this.state.filteredRecipes.map((recipe) => {
+                            return (
+                                <Recipe 
+                                    onDeleteClick={this.handleDeleteRecipe(recipe.recipeId)} 
+                                    history={this.props.history} key={recipe.recipeId} 
+                                    recipe={recipe} />
+                            );          
+                        })
+                        : "Loanding ..."
+                    }
                 </div>
             </div>
         );

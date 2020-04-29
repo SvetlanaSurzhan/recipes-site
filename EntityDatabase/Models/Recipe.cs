@@ -10,5 +10,6 @@ namespace RecipeWebApplication.EntityDatabase.Models
         public string Description { get; set; }
         public virtual ICollection<Ingredient> Ingredients { get; set; }
         public virtual Type Type { get; set; }
+        public int TypeId {get; set;}
     }
 }

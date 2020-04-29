@@ -36,8 +36,15 @@ select, button, img{
     width: 200px;
 }
 
+.form-ingredietns {
+    display: flex;
+    direction: row;
+}
 
+.form-ingredietns input {
+    max-width: 6rem;
+}
 
-
-
-
+.form-ingredietns button {
+    max-height: 3rem;
+}

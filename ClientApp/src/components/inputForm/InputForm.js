@@ -4,20 +4,6 @@ import "./InputForm.css";
 class InputForm extends React.Component {
     constructor(props) {
         super(props);
-
-        let recipe =  {
-            recipeId: 0,
-            ingredients: [],
-            name: "",
-            description: "",
-            type: this.props.types[2],
-            picture: "",
-        };
-
-        if (this.props.recipe) {
-            recipe = {...this.props.recipe};
-        }
-
         this.newIngredient = {
             ingredientId: 0,
             name: "",
@@ -26,7 +12,7 @@ class InputForm extends React.Component {
         };
 
         this.state = {
-            recipe,
+            recipe: {...this.props.recipe},
             newIngredient: {...this.newIngredient}
         };
     }
@@ -38,8 +24,6 @@ class InputForm extends React.Component {
             recipe[key] = event.target.value;
 
             this.setState({ recipe });
-
-            console.log(this.state.recipe);
         };
     };
 
@@ -92,11 +76,15 @@ class InputForm extends React.Component {
 
     handleAddIngredient = (event) => {
         event.preventDefault();
+
         const recipe = {...this.state.recipe};
+
         recipe.ingredients.push(this.state.newIngredient);
 
-        this.setState({ recipe });
-        this.setState({ newIngredient: {...this.newIngredient} }); 
+        this.setState({ 
+            recipe,
+            newIngredient: {...this.newIngredient} //defaulting ingredient form to default values after adding new
+         });
     }
 
     handleSubmit = (recipe) => {
@@ -142,40 +130,54 @@ class InputForm extends React.Component {
                     ></input>
 
                     <label>Select recipe type:</label>
-                    <select value={this.state.recipe.type.typeId} onChange={this.handleDropDownSelect}>
+                    <select value={this.state.recipe.type ? this.state.recipe.type.typeId : ""} onChange={this.handleDropDownSelect}>
                         {this.props.types.map((type, i) => (
-                            <option key={i} value={type.typeId}>{type.type}</option>
+                            <option key={i} value={type.typeId}>{type.name}</option>
                         ))}
                     </select>
 
                     <h4>Ingredients:</h4>
-                    <label htmlFor="ingredient-name">Name</label>
-                    <input
-                        type="text"
-                        onChange={this.handleIngredientChange("name")}
-                        value={this.state.newIngredient.name}
-                        id="ingredient-name"
-                        name="ingredient-name"
-                    ></input>
-                    <label htmlFor="ingredient-quantity">Quantity</label>
-                    <input
-                        type="number"
-                        onChange={this.handleIngredientChange("quantity")}
-                        value={this.state.newIngredient.quantity}
-                        id="ingredient-quantity"
-                        name="ingredient-quantity"
-                    ></input>
-                    <label htmlFor="ingredient-units">Units</label>
-                    <input
-                        type="text"
-                        onChange={this.handleIngredientChange("units")}
-                        value={this.state.newIngredient.units}
-                        id="ingredient-units"
-                        name="ingredient-units"
-                    ></input>
-                    <button onClick={this.handleAddIngredient}>
-                        Add Ingredient
-                    </button>
+                    
+                    <div>
+                        {
+                            this.state.recipe.ingredients.length > 0
+                                ? this.state.recipe.ingredients.map((ingredient, i) => (
+                                    <div key={i}>{ingredient.name} - {ingredient.quantity} - {ingredient.units}</div>
+                                ))
+                                : "Recipe doesn't have ingredietns"
+                        }
+                    </div>        
+                    
+                    <div className="form-ingredietns">
+                        <label htmlFor="ingredient-name">Name</label>
+                        <input
+                            type="text"
+                            onChange={this.handleIngredientChange("name")}
+                            value={this.state.newIngredient.name}
+                            id="ingredient-name"
+                            name="ingredient-name"
+                        ></input>
+                        <label htmlFor="ingredient-quantity">Quantity</label>
+                        <input
+                            type="number"
+                            onChange={this.handleIngredientChange("quantity")}
+                            value={this.state.newIngredient.quantity}
+                            id="ingredient-quantity"
+                            name="ingredient-quantity"
+                        ></input>
+                        <label htmlFor="ingredient-units">Units</label>
+                        <input
+                            type="text"
+                            onChange={this.handleIngredientChange("units")}
+                            value={this.state.newIngredient.units}
+                            id="ingredient-units"
+                            name="ingredient-units"
+                        ></input>
+                        <button onClick={this.handleAddIngredient}>
+                            +
+                        </button>
+                    </div>
+
                     <button type="submit">Save</button>
                 </form>
             </div>
