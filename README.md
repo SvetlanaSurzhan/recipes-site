@@ -48,7 +48,7 @@ Site of recipes where users will be able to browse recipes by categories, create
     - [x] API
     - [x] Client side
     - [x] Database
-  - [x] Create Entity Models and tables. <!-- - Deleted Create Mapping.---->
+  - [x] Create Entity Models and tables.
 #### Week 3
   - [x] Get API endpoints (get all, by Id)
   - [x] Create endpoints
@@ -58,8 +58,8 @@ Site of recipes where users will be able to browse recipes by categories, create
   - [x] Create application shell (header, footer, background)
   - [x] Create React recipe component
   - [x] Create React new recipe/update recipe pages (with components)
-  - [ ] Integrate Client side with ARI
-  - [ ] UAT (user accepted testing)
+  - [x] Integrate Client side with ARI
+  - [x] UAT (user accepted testing)
   
   
 
