@@ -130,10 +130,11 @@ class InputForm extends React.Component {
                     ></input>
 
                     <label>Select recipe type:</label>
-                    <select value={this.state.recipe.type ? this.state.recipe.type.typeId : ""} onChange={this.handleDropDownSelect}>
+                    <select value={this.state.recipe.type ? this.state.recipe.type.typeId : "0"} onChange={this.handleDropDownSelect}>
                         {this.props.types.map((type, i) => (
                             <option key={i} value={type.typeId}>{type.name}</option>
                         ))}
+                        <option value="0">Please select Type</option>
                     </select>
 
                     <h4>Ingredients:</h4>
