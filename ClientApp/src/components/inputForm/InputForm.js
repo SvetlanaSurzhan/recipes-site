@@ -174,7 +174,7 @@ class InputForm extends React.Component {
                             id="ingredient-units"
                             name="ingredient-units"
                         ></input>
-                        <button onClick={this.handleAddIngredient}>
+                        <button onClick={this.handleAddIngredient} className="add-button">
                             +
                         </button>
                     </div>
