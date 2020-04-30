@@ -30,12 +30,7 @@ class Create extends React.Component {
     async componentDidMount() {
         const types = await this.typeApi.getAllTypes();
         
-        this.defaulRecipe.type = types[0]; //defaulting new recipe to first type in list
-
-        this.setState({
-            recipe: {...this.defaulRecipe},
-            types
-        })
+        this.setState({types});
     }
     
     async createNewRecipeApiCall(newRecipe) {
