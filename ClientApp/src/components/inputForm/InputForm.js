@@ -127,7 +127,7 @@ class InputForm extends React.Component {
                         value={this.state.recipe.description}
                         id="description"
                         name="description"
-                        placeholder="Description..."
+                        placeholder="Write description here"
                     ></textarea>
 
                     <label>Select recipe type:</label>
