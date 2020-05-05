@@ -1,12 +1,11 @@
-html {
-    min-height: 100%;
+html, body {
+    display: block;
+    background: #fff;
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 0;
     margin: 0;
+    border: 0; 
 }
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    margin: 0;
-    border: 0;
-}
+
 

@@ -111,7 +111,7 @@ class InputForm extends React.Component {
                         accept="image/*"
                     ></input>
 
-                    <label htmlFor="recipe-name">Name:</label>
+                    <label htmlFor="recipe-name">Recipe name:</label>
                     <input
                         type="text"
                         onChange={this.handleRecipeChange("name")}
@@ -121,13 +121,14 @@ class InputForm extends React.Component {
                     ></input>
 
                     <label htmlFor="description">Description:</label>
-                    <input
+                    <textarea
                         type="text"
                         onChange={this.handleRecipeChange("description")}
                         value={this.state.recipe.description}
                         id="description"
                         name="description"
-                    ></input>
+                        placeholder="Write description here"
+                    ></textarea>
 
                     <label>Select recipe type:</label>
                     <select value={this.state.recipe.type ? this.state.recipe.type.typeId : "0"} onChange={this.handleDropDownSelect}>
@@ -150,13 +151,13 @@ class InputForm extends React.Component {
                     </div>        
                     
                     <div className="form-ingredietns">
-                        <label htmlFor="ingredient-name">Name</label>
                         <input
                             type="text"
                             onChange={this.handleIngredientChange("name")}
                             value={this.state.newIngredient.name}
                             id="ingredient-name"
                             name="ingredient-name"
+                            placeholder="Ingredient name..."
                         ></input>
                         <label htmlFor="ingredient-quantity">Quantity</label>
                         <input
@@ -166,13 +167,13 @@ class InputForm extends React.Component {
                             id="ingredient-quantity"
                             name="ingredient-quantity"
                         ></input>
-                        <label htmlFor="ingredient-units">Units</label>
                         <input
                             type="text"
                             onChange={this.handleIngredientChange("units")}
                             value={this.state.newIngredient.units}
                             id="ingredient-units"
                             name="ingredient-units"
+                            placeholder="Units..."
                         ></input>
                         <button onClick={this.handleAddIngredient} className="add-button">
                             +
