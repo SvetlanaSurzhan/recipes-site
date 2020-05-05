@@ -25,11 +25,11 @@ Site of recipes where users will be able to browse recipes by categories, create
   * Install ASP.NET Core 3.1
   * Install dependences
 * **Install Database**
-  * Download Database from [mysql](https://dev.mysql.com/doc/mysql-osx-excerpt/5.7/en/osx-installation-pkg.html)
-  * Install with parametrs (Name, Port)
+  * Download Database from [mysql.com](https://dev.mysql.com/doc/mysql-osx-excerpt/5.7/en/osx-installation-pkg.html)
+  * Run scripts in folder **/SQLMigrations** first **/1_migration_create_DB_and_tables_with_data** then second **/2_migration_create_user**
   
 ## Run the Project
-1. Launch Database server (port)
+1. Launch Database server (3306)
 2. Build and run .NET Core API `dotnet run` 
 3. Run Client side from **/client** folder `npm start`
 ## Features
