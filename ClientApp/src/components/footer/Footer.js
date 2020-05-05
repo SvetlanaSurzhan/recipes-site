@@ -27,7 +27,6 @@ class Footer extends React.Component {
                             <li><img alt="whatsapp-icon" src={whatsapp} className="whatsapp-icon" /></li>
                         </ul>
                     </div>
-
                 </footer>
             </div>
         );
