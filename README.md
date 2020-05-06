@@ -6,8 +6,8 @@ Site of recipes where users will be able to browse recipes by categories, create
 ## Technical Summary
 * Client side
   * React
-  * Vanila JS
-  * Vanila CSS
+  * Vanilla JS
+  * Vanilla CSS
   * HTML
 * API
   * ASP.NET Core 3.1
@@ -19,17 +19,24 @@ Site of recipes where users will be able to browse recipes by categories, create
 * Install Git
 * Clone repository
 * **Install Client side**
-  * go to **/client** folder
-  * install node packedges `npm install`
-* **Insyall API (.NET Core)**
+  * Go to **/ClientApp** folder
+  * Install node packages `npm install`
+* **Install API (.NET Core)**
   * Install ASP.NET Core 3.1
-  * Install dependences
+  * Install nuget-package-manager in Visual Studio Code
+  * Press Ctrl+Shift+P or Command+Shift+P, and type >nuget, select **NuGet Package Manager: Add Package**
 * **Install Database**
   * Download Database from [mysql.com](https://dev.mysql.com/doc/mysql-osx-excerpt/5.7/en/osx-installation-pkg.html)
-  * Run scripts in folder **/SQLMigrations** first **/1_migration_create_DB_and_tables_with_data** then second **/2_migration_create_user**
+  * Download [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
+  * Open MySQL Workbench, click on Schemas
+  * Copy and paste first script **/1_migration_create_DB_and_tables_with_data** in Visual Studio Code folder **/SQLMigrations**
+  * Select All and execute
+  * Copy and paste second script **/2_migration_create_user** in Visual Studio Code folder **/SQLMigrations**, select all and execute
+  * Refresh Schemas
+  * Click right button on the Recipes table and click on **Select Rows - Limit 1000**, now you can see recipes(you can do the same with other tables)  
   
 ## Run the Project
-1. Launch Database server (3306)
+1. Launch Database server (port 3306)
 2. Build and run .NET Core API `dotnet run` 
 3. Run Client side from **/client** folder `npm start`
 ## Features
