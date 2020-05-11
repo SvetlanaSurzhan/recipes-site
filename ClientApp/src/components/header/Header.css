@@ -5,7 +5,7 @@
 	align-items: center;
 	padding: 1em;
 	background-color:#292929;
-	max-height: 10vh;
+	max-height: 15vh;
 	color: white;
 	box-shadow: 0 5px 10px -5px #000;
 	position: fixed;
@@ -22,6 +22,7 @@ h3{
 	margin: 0;
 	width: 10em;
 	text-shadow: 2px 2px 4px #000000;
+	font-size: x-large;
 }
 .nav-menu{
 	display: flex;
