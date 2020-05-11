@@ -7,8 +7,8 @@ class Recipe extends React.Component {
             <div className="recipe-container" onClick={() => (this.props.history.push(`/update/${this.props.recipe.recipeId}`))}>
                 <div className="recipe-items">
                     <img className="img-item" alt={this.props.recipe.name} src={this.props.recipe.picture} />
-                    <h5>{this.props.recipe.name}</h5>
-                    <h6>Ingredients:</h6>
+                    <h4>{this.props.recipe.name}</h4>
+                    <h5>Ingredients:</h5>
                     <p>
                         {this.props.recipe.ingredients.map((ingr, i) => {
                             return (

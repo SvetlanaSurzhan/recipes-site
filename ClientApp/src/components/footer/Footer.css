@@ -22,6 +22,10 @@
 h5{
     padding: 5px 5px; 
     margin-bottom: 0;
+    font-size: large;
+}
+address{
+    font-size: medium;
 }
 .social-links-item{
     display: flex;
@@ -34,9 +38,9 @@ h5{
 .instagram-icon, .facebook-icon, .linkedin-icon, .whatsapp-icon{
     width: auto;
     height: 6vh;
-}
-.facebook-icon, .instagram-icon{
-    background-color: white;
+    border:rgb(206, 84, 53) solid;
+    border-radius: 5px;
+    background-color:rgb(206, 84, 53);
 }
 .contact-item{
     max-height: 15vh;
