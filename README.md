@@ -10,6 +10,7 @@ Site of recipes where users will be able to browse recipes by categories, create
   * Vanilla CSS
   * HTML
 * API
+  * C#
   * ASP.NET Core 3.1
   * Entity Framework for Database
 * Database
