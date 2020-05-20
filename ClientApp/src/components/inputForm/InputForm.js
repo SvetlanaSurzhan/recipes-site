@@ -109,6 +109,7 @@ class InputForm extends React.Component {
                         name="myImage"
                         onChange={this.handleImageUpload}
                         accept="image/*"
+                        required
                     ></input>
 
                     <label htmlFor="recipe-name">Recipe name:</label>
@@ -118,6 +119,7 @@ class InputForm extends React.Component {
                         value={this.state.recipe.name}
                         id="recipe-name"
                         name="recipe-name"
+                        required
                     ></input>
 
                     <label htmlFor="description">Description:</label>
@@ -128,10 +130,12 @@ class InputForm extends React.Component {
                         id="description"
                         name="description"
                         placeholder="Write description here"
+                        required
                     ></textarea>
+                    <div className="caption-text">Your answer cannot be more than 500 characters.&nbsp;</div>
 
                     <label>Select recipe type:</label>
-                    <select value={this.state.recipe.type ? this.state.recipe.type.typeId : "0"} onChange={this.handleDropDownSelect}>
+                    <select required value={this.state.recipe.type ? this.state.recipe.type.typeId : "0"} onChange={this.handleDropDownSelect} required>
                         {this.props.types.map((type, i) => (
                             <option key={i} value={type.typeId}>{type.name}</option>
                         ))}

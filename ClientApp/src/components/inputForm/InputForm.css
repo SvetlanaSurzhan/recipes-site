@@ -83,5 +83,10 @@ textarea{
     display: inline-block;
     text-align: center;
 }
+.caption-text{
+    text-align: end;
+    font-size: 12px;
+    line-height: 18px;
+}
 
 
