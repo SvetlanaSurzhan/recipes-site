@@ -45,17 +45,15 @@ select, button, img{
     font-size: 10pt;
     width: 200px;
 }
-
 .form-ingredietns {
     display: flex;
     direction: row;
     align-items: center;
+    font-size: medium;
 }
-
 .form-ingredietns input {
     max-width: 6rem;
 }
-
 .form-ingredietns button {
     max-height: 3rem;
 }
@@ -84,9 +82,11 @@ textarea{
     text-align: center;
 }
 .caption-text{
-    text-align: end;
-    font-size: 12px;
-    line-height: 18px;
+    display: block;
+    width: 50%;
+    align-self: inherit;
+    font-size: small;
+    line-height: 20px;
 }
 img:before {
     content: " ";
