@@ -47,7 +47,7 @@ select, button, img{
 }
 .form-ingredietns {
     display: flex;
-    direction: row;
+    flex-direction: column;
     align-items: center;
     font-size: medium;
 }
@@ -61,7 +61,7 @@ select, button, img{
     padding: 4px 8px 4px 8px;
 }
 textarea{
-    width: 50%;
+    width: 40%;
     height: 100px;
     padding: 12px 20px;
     box-sizing: border-box;
@@ -73,17 +73,23 @@ textarea{
 }
 #ingredient-name, #ingredient-quantity, #ingredient-units, #recipe-name{
     box-sizing: border-box;
-    min-width: 15em;
+    min-width: auto;
     padding: 1em;
 }
 .form-ingredietns{
-    width: 100%;
+    width: 40%;
     display: inline-block;
+    text-align: center;
+    margin-top: 1em;
+}
+#add-ingredietn{
+    display: none;
+    width: 100%;
     text-align: center;
 }
 .caption-text{
     display: block;
-    width: 50%;
+    width: 40%;
     align-self: inherit;
     font-size: small;
     line-height: 20px;

@@ -90,7 +90,15 @@ class InputForm extends React.Component {
     handleSubmit = (recipe) => {
         return (event) => {
             event.preventDefault();
-            this.props.onSave(recipe)
+            this.props.onSave(recipe);
+        }
+    }
+
+    addIngredient(){
+        if (document.getElementById("want-add-ingredient").checked){
+            document.getElementById("add-ingredietn").style.display="flex";
+        }else{
+            document.getElementById("add-ingredietn").style.display="none";
         }
     }
     
@@ -156,33 +164,45 @@ class InputForm extends React.Component {
                     </div>        
                     
                     <div className="form-ingredietns">
+                        <label htmlFor="want-add-ingredient">
+                            Do you want to add an ingredient?
+                        </label>
                         <input
-                            type="text"
-                            onChange={this.handleIngredientChange("name")}
-                            value={this.state.newIngredient.name}
-                            id="ingredient-name"
-                            name="ingredient-name"
-                            placeholder="Ingredient name..."
-                        ></input>
-                        <label htmlFor="ingredient-quantity">Quantity</label>
-                        <input
-                            type="number"
-                            onChange={this.handleIngredientChange("quantity")}
-                            value={this.state.newIngredient.quantity}
-                            id="ingredient-quantity"
-                            name="ingredient-quantity"
-                        ></input>
-                        <input
-                            type="text"
-                            onChange={this.handleIngredientChange("units")}
-                            value={this.state.newIngredient.units}
-                            id="ingredient-units"
-                            name="ingredient-units"
-                            placeholder="Units..."
-                        ></input>
-                        <button onClick={this.handleAddIngredient} className="add-button">
-                            +
-                        </button>
+                            id="want-add-ingredient" 
+                            name="want-add-ingredient"
+                            type="checkbox"
+                            onChange={this.addIngredient}
+                        >    
+                        </input>
+                        <div id="add-ingredietn">
+                            <input
+                                type="text"
+                                onChange={this.handleIngredientChange("name")}
+                                value={this.state.newIngredient.name}
+                                id="ingredient-name"
+                                name="ingredient-name"
+                                placeholder="Ingredient name..."
+                            ></input>
+                            <label htmlFor="ingredient-quantity">Quantity</label>
+                            <input
+                                type="number"
+                                onChange={this.handleIngredientChange("quantity")}
+                                value={this.state.newIngredient.quantity}
+                                id="ingredient-quantity"
+                                name="ingredient-quantity"
+                            ></input>
+                            <input
+                                type="text"
+                                onChange={this.handleIngredientChange("units")}
+                                value={this.state.newIngredient.units}
+                                id="ingredient-units"
+                                name="ingredient-units"
+                                placeholder="Units..."
+                            ></input>
+                            <button onClick={this.handleAddIngredient} className="add-button">
+                                +
+                            </button>
+                        </div>
                     </div>
 
                     <button type="submit">Save</button>
