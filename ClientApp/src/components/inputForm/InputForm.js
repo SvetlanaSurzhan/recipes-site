@@ -96,9 +96,9 @@ class InputForm extends React.Component {
 
     addIngredient(){
         if (document.getElementById("want-add-ingredient").checked){
-            document.getElementById("add-ingredietn").style.display="flex";
+            document.getElementById("add-ingredient").style.display="flex";
         }else{
-            document.getElementById("add-ingredietn").style.display="none";
+            document.getElementById("add-ingredient").style.display="none";
         }
     }
     
@@ -174,7 +174,7 @@ class InputForm extends React.Component {
                             onChange={this.addIngredient}
                         >    
                         </input>
-                        <div id="add-ingredietn">
+                        <div id="add-ingredient">
                             <input
                                 type="text"
                                 onChange={this.handleIngredientChange("name")}
@@ -190,6 +190,7 @@ class InputForm extends React.Component {
                                 value={this.state.newIngredient.quantity}
                                 id="ingredient-quantity"
                                 name="ingredient-quantity"
+                                placeholder="0000..."
                             ></input>
                             <input
                                 type="text"

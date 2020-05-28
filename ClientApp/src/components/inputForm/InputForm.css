@@ -20,7 +20,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-content: flex-start;
     padding: 5px;
     width: 100%;
 }
@@ -44,15 +43,6 @@ select, button, img{
     font-weight: 700;
     font-size: 10pt;
     width: 200px;
-}
-.form-ingredietns {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: medium;
-}
-.form-ingredietns input {
-    max-width: 6rem;
 }
 .form-ingredietns button {
     max-height: 3rem;
@@ -78,11 +68,11 @@ textarea{
 }
 .form-ingredietns{
     width: 40%;
-    display: inline-block;
+    display: block;
     text-align: center;
     margin-top: 1em;
 }
-#add-ingredietn{
+#add-ingredient{
     display: none;
     width: 100%;
     text-align: center;
