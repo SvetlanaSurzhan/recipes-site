@@ -90,7 +90,15 @@ class InputForm extends React.Component {
     handleSubmit = (recipe) => {
         return (event) => {
             event.preventDefault();
-            this.props.onSave(recipe)
+            this.props.onSave(recipe);
+        }
+    }
+
+    addIngredient(){
+        if (document.getElementById("want-add-ingredient").checked){
+            document.getElementById("add-ingredient").style.display="flex";
+        }else{
+            document.getElementById("add-ingredient").style.display="none";
         }
     }
     
@@ -99,7 +107,7 @@ class InputForm extends React.Component {
             <div className="form">
                 <h4>Recipe:</h4>
                 <form onSubmit={this.handleSubmit(this.state.recipe)} className="recipe-form">
-                    <img alt="img" className="img-item" src={this.state.recipe.picture} />
+                    <img alt="" className="img-item" src={this.state.recipe.picture} />
 
                     <label htmlFor="img">Select image:</label>
                     <input
@@ -109,6 +117,7 @@ class InputForm extends React.Component {
                         name="myImage"
                         onChange={this.handleImageUpload}
                         accept="image/*"
+                        required
                     ></input>
 
                     <label htmlFor="recipe-name">Recipe name:</label>
@@ -118,6 +127,7 @@ class InputForm extends React.Component {
                         value={this.state.recipe.name}
                         id="recipe-name"
                         name="recipe-name"
+                        required
                     ></input>
 
                     <label htmlFor="description">Description:</label>
@@ -128,10 +138,13 @@ class InputForm extends React.Component {
                         id="description"
                         name="description"
                         placeholder="Write description here"
+                        required
+                        maxlength="500"
                     ></textarea>
+                    <div className="caption-text">Your description cannot be more than 500 characters.&nbsp;</div>
 
                     <label>Select recipe type:</label>
-                    <select value={this.state.recipe.type ? this.state.recipe.type.typeId : "0"} onChange={this.handleDropDownSelect}>
+                    <select value={this.state.recipe.type ? this.state.recipe.type.typeId : "0"} onChange={this.handleDropDownSelect} required>
                         {this.props.types.map((type, i) => (
                             <option key={i} value={type.typeId}>{type.name}</option>
                         ))}
@@ -151,33 +164,46 @@ class InputForm extends React.Component {
                     </div>        
                     
                     <div className="form-ingredietns">
+                        <label htmlFor="want-add-ingredient">
+                            Do you want to add an ingredient?
+                        </label>
                         <input
-                            type="text"
-                            onChange={this.handleIngredientChange("name")}
-                            value={this.state.newIngredient.name}
-                            id="ingredient-name"
-                            name="ingredient-name"
-                            placeholder="Ingredient name..."
-                        ></input>
-                        <label htmlFor="ingredient-quantity">Quantity</label>
-                        <input
-                            type="number"
-                            onChange={this.handleIngredientChange("quantity")}
-                            value={this.state.newIngredient.quantity}
-                            id="ingredient-quantity"
-                            name="ingredient-quantity"
-                        ></input>
-                        <input
-                            type="text"
-                            onChange={this.handleIngredientChange("units")}
-                            value={this.state.newIngredient.units}
-                            id="ingredient-units"
-                            name="ingredient-units"
-                            placeholder="Units..."
-                        ></input>
-                        <button onClick={this.handleAddIngredient} className="add-button">
-                            +
-                        </button>
+                            id="want-add-ingredient" 
+                            name="want-add-ingredient"
+                            type="checkbox"
+                            onChange={this.addIngredient}
+                        >    
+                        </input>
+                        <div id="add-ingredient">
+                            <input
+                                type="text"
+                                onChange={this.handleIngredientChange("name")}
+                                value={this.state.newIngredient.name}
+                                id="ingredient-name"
+                                name="ingredient-name"
+                                placeholder="Ingredient name..."
+                            ></input>
+                            <label htmlFor="ingredient-quantity">Quantity</label>
+                            <input
+                                type="number"
+                                onChange={this.handleIngredientChange("quantity")}
+                                value={this.state.newIngredient.quantity}
+                                id="ingredient-quantity"
+                                name="ingredient-quantity"
+                                placeholder="0000..."
+                            ></input>
+                            <input
+                                type="text"
+                                onChange={this.handleIngredientChange("units")}
+                                value={this.state.newIngredient.units}
+                                id="ingredient-units"
+                                name="ingredient-units"
+                                placeholder="Units..."
+                            ></input>
+                            <button onClick={this.handleAddIngredient} className="add-button">
+                                +
+                            </button>
+                        </div>
                     </div>
 
                     <button type="submit">Save</button>
