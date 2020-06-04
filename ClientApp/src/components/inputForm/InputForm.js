@@ -13,7 +13,8 @@ class InputForm extends React.Component {
 
         this.state = {
             recipe: {...this.props.recipe},
-            newIngredient: {...this.newIngredient}
+            newIngredient: {...this.newIngredient},
+            // checked: true
         };
     }
 
@@ -35,7 +36,7 @@ class InputForm extends React.Component {
         recipe.type = typeObj;
 
         this.setState({ recipe });
-    }
+    };
 
     handleIngredientChange = (key) => {
         return (event) => {
@@ -94,7 +95,13 @@ class InputForm extends React.Component {
         }
     }
 
-    addIngredient(){
+    // handleIsChecked() {
+    //     this.setState({
+    //         checked: !this.state.checked
+    //     });
+    // };
+    handleIsChecked(){
+         
         if (document.getElementById("want-add-ingredient").checked){
             document.getElementById("add-ingredient").style.display="flex";
         }else{
@@ -171,10 +178,10 @@ class InputForm extends React.Component {
                             id="want-add-ingredient" 
                             name="want-add-ingredient"
                             type="checkbox"
-                            onChange={this.addIngredient}
+                            onChange={this.handleIsChecked}
                         >    
                         </input>
-                        <div id="add-ingredient">
+                        <div id="add-ingredient" >
                             <input
                                 type="text"
                                 onChange={this.handleIngredientChange("name")}
