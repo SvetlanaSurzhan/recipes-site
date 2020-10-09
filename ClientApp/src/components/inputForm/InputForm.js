@@ -14,8 +14,9 @@ class InputForm extends React.Component {
         this.state = {
             recipe: {...this.props.recipe},
             newIngredient: {...this.newIngredient},
-            // checked: true
+            isChecked: false
         };
+        this.handleIsChecked=this.handleIsChecked.bind(this);
     }
 
     handleRecipeChange = (key) => {
@@ -85,7 +86,7 @@ class InputForm extends React.Component {
         this.setState({ 
             recipe,
             newIngredient: {...this.newIngredient} //defaulting ingredient form to default values after adding new
-         });
+        });
     }
 
     handleSubmit = (recipe) => {
@@ -95,19 +96,21 @@ class InputForm extends React.Component {
         }
     }
 
-    // handleIsChecked() {
-    //     this.setState({
-    //         checked: !this.state.checked
-    //     });
-    // };
-    handleIsChecked(){
+    handleIsChecked() {
+        // this.state.isChecked = !this.state.isChecked; 
+        this.setState({
+            isChecked: true
+        });
+    }  
+
+    // handleIsChecked(){
          
-        if (document.getElementById("want-add-ingredient").checked){
-            document.getElementById("add-ingredient").style.display="flex";
-        }else{
-            document.getElementById("add-ingredient").style.display="none";
-        }
-    }
+    //     if (document.getElementById("want-add-ingredient").checked){
+    //         document.getElementById("add-ingredient").style.display="flex";
+    //     }else{
+    //         document.getElementById("add-ingredient").style.display="none";
+    //     }
+    // }
     
     render() {  
         return (
@@ -178,9 +181,11 @@ class InputForm extends React.Component {
                             id="want-add-ingredient" 
                             name="want-add-ingredient"
                             type="checkbox"
-                            onChange={this.handleIsChecked}
-                        >    
+                            onClick={this.handleIsChecked}
+                            style = {{display: this.state.isChecked ? "block" : "none"}}
+                        >  
                         </input>
+                        
                         <div id="add-ingredient" >
                             <input
                                 type="text"
