@@ -41,7 +41,7 @@ class Update extends React.Component {
     render() {
         return (
             <div className="update-container">
-                <h2>Update recipe</h2>
+                <h2>View and update recipe</h2>
                 {this.state.recipe.recipeId
                     ? <InputForm 
                         types={this.state.types} 
