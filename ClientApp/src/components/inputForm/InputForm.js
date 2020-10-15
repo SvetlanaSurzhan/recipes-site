@@ -149,7 +149,6 @@ class InputForm extends React.Component {
                         name="description"
                         placeholder="Write description here"
                         required
-                        maxlength="500"
                     ></textarea>
                     <div className="caption-text">Your description cannot be more than 500 characters.&nbsp;</div>
 
