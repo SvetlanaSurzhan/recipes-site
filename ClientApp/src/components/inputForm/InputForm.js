@@ -150,7 +150,6 @@ class InputForm extends React.Component {
                         placeholder="Write description here"
                         required
                     ></textarea>
-                    <div className="caption-text">Your description cannot be more than 500 characters.&nbsp;</div>
 
                     <label>Select recipe type:</label>
                     <select value={this.state.recipe.type ? this.state.recipe.type.typeId : "0"} onChange={this.handleDropDownSelect} required>
