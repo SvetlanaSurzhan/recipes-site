@@ -93,6 +93,7 @@ class InputForm extends React.Component {
         return (event) => {
             event.preventDefault();
             this.props.onSave(recipe);
+            alert("Your recipe is saved!");
         }
     }
 
@@ -105,13 +106,13 @@ class InputForm extends React.Component {
 
     // handleIsChecked(){
          
-    //     if (document.getElementById("want-add-ingredient").checked){
-    //         document.getElementById("add-ingredient").style.display="flex";
-    //     }else{
-    //         document.getElementById("add-ingredient").style.display="none";
+    //      if (document.getElementById("want-add-ingredient").checked){
+    //          document.getElementById("add-ingredient").style.display="flex";
+    //      }else{
+    //          document.getElementById("add-ingredient").style.display="none";
     //     }
-    // }
-    
+    // }  
+
     render() {  
         return (
             <div className="form">
