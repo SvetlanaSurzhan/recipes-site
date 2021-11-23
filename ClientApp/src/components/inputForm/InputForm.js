@@ -98,20 +98,20 @@ class InputForm extends React.Component {
     }
 
     handleIsChecked() {
-        // this.state.isChecked = !this.state.isChecked; 
+        this.state.isChecked = !this.state.isChecked; 
         this.setState({
             isChecked: true
         });
     }  
 
-    // handleIsChecked(){
+    handleIsChecked(){
          
-    //      if (document.getElementById("want-add-ingredient").checked){
-    //          document.getElementById("add-ingredient").style.display="flex";
-    //      }else{
-    //          document.getElementById("add-ingredient").style.display="none";
-    //     }
-    // }  
+         if (document.getElementById("want-add-ingredient").checked){
+             document.getElementById("add-ingredient").style.display="flex";
+         }else{
+             document.getElementById("add-ingredient").style.display="none";
+        }
+    }  
 
     render() {  
         return (
