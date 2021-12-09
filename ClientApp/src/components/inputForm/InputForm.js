@@ -17,7 +17,6 @@ class InputForm extends React.Component {
             isChecked: false
         };
         this.handleIsChecked=this.handleIsChecked.bind(this);
-        this.handleSubmitAlert=this.handleSubmitAlert.bind(this);
     }
 
     handleRecipeChange = (key) => {
@@ -93,13 +92,11 @@ class InputForm extends React.Component {
     handleSubmit = (recipe) => {
         return (event) => {
             event.preventDefault();
-            this.props.onSave(recipe);
+            this.props
+                .onSave(recipe)
+                .then(() => alert("Your recipe is saved!"));
         }
     }
-
-    handleSubmitAlert(){
-        alert("Your recipe is saved!");
-    } 
 
     handleIsChecked() {
         this.state.isChecked = !this.state.isChecked; 
@@ -221,7 +218,7 @@ class InputForm extends React.Component {
                         </div>
                     </div>
 
-                    <button type="submit" onClick={this.handleSubmitAlert}>Save</button>
+                    <button type="submit">Save</button>
                 </form>
             </div>
         );
