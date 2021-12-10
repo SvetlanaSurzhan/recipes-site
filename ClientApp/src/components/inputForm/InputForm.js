@@ -129,7 +129,6 @@ class InputForm extends React.Component {
                         name="myImage"
                         onChange={this.handleImageUpload}
                         accept="image/*"
-                        required
                     ></input>
 
                     <label htmlFor="recipe-name">Recipe name:</label>
